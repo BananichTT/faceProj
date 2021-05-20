@@ -6,6 +6,13 @@ import os
 path = 'KnownFaces'
 images = []
 className = []
-myList = os.listdir(path)
+List = os.listdir(path)
 
-print(myList)
+print(List)
+
+for cls in List:
+    curlImg = cv2.imread(f'{path}/{cls}')
+    images.append(curlImg)
+    className.append(os.path.splitext(cls)[0])
+
+print(className)
